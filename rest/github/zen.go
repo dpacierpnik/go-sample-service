@@ -32,6 +32,7 @@ func Zen(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, fmt.Sprintf("Unable to read response from '%s'. Root cause: %s", githubZenEndpoint, err.Error()), http.StatusInternalServerError)
 		return
 	}
+
 	dto := &zenResponseDto{
 		Quotation: string(respPayload),
 	}

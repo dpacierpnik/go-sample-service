@@ -48,7 +48,7 @@ Echo request headers:
 curl http://localhost:8080/echo/headers  -v
 ```
 
-Echo request body
+Echo request body:
 
 ```bash
 curl http://localhost:8080/echo/body -H 'application/json' -d '{ "field1": "testValue" }'
@@ -63,22 +63,18 @@ curl http://localhost:8080/echo/body -H 'application/json' -d '{ "field1": "test
 1. Open Activity Monitor and open **main** app details.
 
 1. Run:
-
-   ```bash
-   loadtest -n 10000 --rps 300 http://localhost:8080
-   ```
    
    ```bash
    loadtest -n 10000 --rps 300 -T 'application/json' -P '{"field1": "abcdefghijkolmnopqrstuvqxyz", "field2": "abcdefghijkolmnopqrstuvqxyz", "field3": "abcdefghijkolmnopqrstuvqxyz"}' http://localhost:8080/echo/body
    ```
 
+   or:
+
+   ```bash
+   loadtest -n 10000 --rps 300 http://localhost:8080
+   ```
+
 # How to run tests
-
-```bash
-go test ./...
-```
-
-# How to run tests with coverage
 
 ```bash
 go test ./...
