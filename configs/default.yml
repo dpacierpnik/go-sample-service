@@ -1,0 +1,6 @@
+github:
+  api:
+    url:
+
+webpages:
+  templatesDir: ./web/templates/
