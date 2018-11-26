@@ -23,7 +23,7 @@
 # How to run
 
 ```bash
-go run main.go
+go run cmd/theservice/main.go
 ```
 
 ## Using webapp
